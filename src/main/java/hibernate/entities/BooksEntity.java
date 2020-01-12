@@ -30,6 +30,10 @@ public class BooksEntity implements Serializable {
         this.category = category;
     }
 
+    public BooksEntity() {
+
+    }
+
     public String getTitle() {
         return title;
     }

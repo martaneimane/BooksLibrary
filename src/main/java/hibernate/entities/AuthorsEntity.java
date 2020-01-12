@@ -25,6 +25,9 @@ public class AuthorsEntity {
         this.country = country;
     }
 
+    public AuthorsEntity() {
+    }
+
     public String getAuthorNameSurname() {
         return authorNameSurname;
     }
