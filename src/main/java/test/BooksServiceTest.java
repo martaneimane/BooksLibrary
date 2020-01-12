@@ -13,6 +13,5 @@ public class BooksServiceTest {
     public void createABook(){
         BooksEntity book = new BooksEntity("Title Example", "Author Example", "1995", "Drama");
         booksService.createBook(book);
-        assertEquals();
     }
 }
