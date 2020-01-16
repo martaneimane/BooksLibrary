@@ -19,7 +19,7 @@ public class HibernateUtility {
             try {
                 Configuration configuration = new Configuration();
                 Properties settings = new Properties();
-                settings.put(Environment.URL, "jdbc:mysql://127.0.0.1:3306/sda");
+                settings.put(Environment.URL, "jdbc:mysql://127.0.0.1:3306/library");
                 settings.put(Environment.USER, "root");
                 settings.put(Environment.PASS, "Xh010501!");
                 settings.put(Environment.DIALECT, "org.hibernate.dialect.MySQLDialect");

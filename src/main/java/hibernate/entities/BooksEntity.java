@@ -7,9 +7,11 @@ import java.io.Serializable;
 @Table(name = "books_list")
 public class BooksEntity implements Serializable {
 
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    @Column(name = "id_books_list")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id_books_list;
 
     @Column(name = "Title")
     private String title;
