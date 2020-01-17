@@ -19,6 +19,7 @@ public class BooksEntity implements Serializable {
     @Column(name = "Author")
     private String author;
 
+
     @Column(name = "Year")
     private String year;
 
@@ -27,6 +28,12 @@ public class BooksEntity implements Serializable {
 
     public BooksEntity() {
 
+    }
+
+
+
+    public Integer getId() {
+        return id;
     }
 
     public String getTitle() {

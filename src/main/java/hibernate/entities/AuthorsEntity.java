@@ -24,6 +24,10 @@ public class AuthorsEntity {
     public AuthorsEntity() {
     }
 
+    public Integer getId() {
+        return id;
+    }
+
     public String getAuthorNameSurname() {
         return authorNameSurname;
     }

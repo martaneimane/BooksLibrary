@@ -7,43 +7,49 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="616.0" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.221" fx:controller="javafx.Controller">
-    <tabs>
-        <Tab text="Books" fx:id="booksTab">
-            <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                    <children>
-                        <TableView layoutY="6.0" prefHeight="270.0" prefWidth="616.0" fx:id="bookTable">
-                            <columns>
-                                <TableColumn prefWidth="70.0" text="ID" fx:id="idBooks"/>
-                                <TableColumn prefWidth="150.0" text="Title" fx:id="title" />
-                                <TableColumn prefWidth="100.0" text="Author" fx:id="author" />
-                                <TableColumn prefWidth="100.0" text="Year" fx:id="year" />
-                                <TableColumn prefWidth="100.0" text="Category" fx:id="category"/>
-                            </columns>
-                        </TableView>
-                        <Button layoutX="10.0" layoutY="330.0" mnemonicParsing="false" text="Add" fx:id="bookButtonAdd" />
-                        <Button layoutX="60.0" layoutY="330.0" mnemonicParsing="false" text="Update" fx:id="bookButtonUpdate"/>
-                        <Button layoutX="125.0" layoutY="330.0" mnemonicParsing="false" text="Delete" fx:id="bookButtonDelete" />
-                    </children></AnchorPane>
-            </content>
-        </Tab>
-        <Tab text="Authors" fx:id="authorsTab">
-            <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                    <children>
-                        <TableView layoutY="6.0" prefHeight="270.0" prefWidth="616.0" fx:id="authorsTable">
-                            <columns>
-                                <TableColumn prefWidth="75.0" text="ID" fx:id="idAuthors" />
-                                <TableColumn prefWidth="75.0" text="Name" fx:id="name"/>
-                                <TableColumn prefWidth="75.0" text="Country" fx:id="country" />
-                            </columns>
-                        </TableView>
-                        <Button layoutX="11.0" layoutY="330.0" mnemonicParsing="false" text="Add" />
-                        <Button layoutX="59.0" layoutY="330.0" mnemonicParsing="false" text="Update" />
-                        <Button layoutX="120.0" layoutY="330.0" mnemonicParsing="false" text="Delete" />
-                    </children></AnchorPane>
-            </content>
-        </Tab>
-    </tabs>
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+         prefWidth="616.0" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml/1"
+         xmlns="http://javafx.com/javafx/8.0.221" fx:controller="javafx.Controller">
+    <Tab text="Books" fx:id="booksTab">
+        <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <children>
+                    <TableView layoutY="6.0" prefHeight="270.0" prefWidth="616.0" fx:id="bookTable">
+                        <columns>
+                            <TableColumn prefWidth="70.0" text="ID" fx:id="idBooks"/>
+                            <TableColumn prefWidth="150.0" text="Title" fx:id="title"/>
+                            <TableColumn prefWidth="100.0" text="Author" fx:id="author"/>
+                            <TableColumn prefWidth="100.0" text="Year" fx:id="year"/>
+                            <TableColumn prefWidth="100.0" text="Category" fx:id="category"/>
+                        </columns>
+                    </TableView>
+                    <Button layoutX="10.0" layoutY="330.0" mnemonicParsing="false" text="Add" fx:id="bookButtonAdd"/>
+                    <Button layoutX="60.0" layoutY="330.0" mnemonicParsing="false" text="Update"
+                            fx:id="bookButtonUpdate"/>
+                    <Button layoutX="125.0" layoutY="330.0" mnemonicParsing="false" text="Delete"
+                            fx:id="bookButtonDelete"/>
+                </children>
+            </AnchorPane>
+        </content>
+    </Tab>
+    <Tab text="Authors" fx:id="authorsTab">
+        <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <children>
+                    <TableView layoutY="6.0" prefHeight="270.0" prefWidth="616.0" fx:id="authorsTable">
+                        <columns>
+                            <TableColumn prefWidth="75.0" text="ID" fx:id="idAuthors"/>
+                            <TableColumn prefWidth="75.0" text="Name" fx:id="name"/>
+                            <TableColumn prefWidth="75.0" text="Country" fx:id="country"/>
+                        </columns>
+                    </TableView>
+                    <Button layoutX="11.0" layoutY="330.0" mnemonicParsing="false" text="Add" fx:id="authorButtonAdd"/>
+                    <Button layoutX="59.0" layoutY="330.0" mnemonicParsing="false" text="Update"
+                            fx:id="authorButtonUpdate"/>
+                    <Button layoutX="120.0" layoutY="330.0" mnemonicParsing="false" text="Delete"
+                            fx:id="authorButtonDelete"/>
+                </children>
+            </AnchorPane>
+        </content>
+    </Tab>
 </TabPane>
