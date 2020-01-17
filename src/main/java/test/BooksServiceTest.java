@@ -4,6 +4,7 @@ import hibernate.entities.BooksEntity;
 import hibernate.services.BooksService;
 import org.junit.Test;
 
+
 import static org.junit.Assert.*;
 
 public class BooksServiceTest {
@@ -33,7 +34,6 @@ public class BooksServiceTest {
         booksEntity.setTitle("Test Title 2");
         booksService.editBook(booksEntity);
 
-        assertEquals(booksEntity.getTitle(), booksEntity.getTitle());
     }
 
     @Test
@@ -46,6 +46,12 @@ public class BooksServiceTest {
 
         booksService.createBook(booksEntity);
         booksService.deleteBook(booksEntity);
+
+    }
+
+    @Test
+    public void getAllBooks() {
+        System.out.println(booksService.getAllBooks());
 
     }
 

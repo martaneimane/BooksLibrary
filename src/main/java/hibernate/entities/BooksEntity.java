@@ -11,7 +11,7 @@ public class BooksEntity implements Serializable {
     @Id
     @Column(name = "id_books_list")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_books_list;
+    private Integer id;
 
     @Column(name = "Title")
     private String title;
@@ -24,13 +24,6 @@ public class BooksEntity implements Serializable {
 
     @Column(name = "Category")
     private String category;
-
-    public BooksEntity(String title, String author, String year, String category) {
-        this.title = title;
-        this.author = author;
-        this.year = year;
-        this.category = category;
-    }
 
     public BooksEntity() {
 
@@ -66,6 +59,16 @@ public class BooksEntity implements Serializable {
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    @Override
+    public String toString() {
+        return "Book: " +
+                " Id: " + id +
+                " Title: " + title + '\'' +
+                " Author: " + author + '\'' +
+                " Year: " + year + '\'' +
+                " Category: " + category;
     }
 }
 

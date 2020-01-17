@@ -3,18 +3,23 @@ package hibernate.services;
 import hibernate.entities.AuthorsEntity;
 import hibernate.entities.BooksEntity;
 import hibernate.util.HibernateUtility;
+import javafx.collections.ObservableList;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import javax.persistence.Query;
 import java.util.List;
 
 public class AuthorsService {
 
     private Session session;
 
+    public AuthorsService() {
+        session = HibernateUtility.getSessionFactory().openSession();
+    }
+
     public void createAuthor(AuthorsEntity authorsEntity) {
 
-        session = HibernateUtility.getSessionFactory().openSession();
 
         Transaction transaction = null;
         try {
@@ -57,7 +62,8 @@ public class AuthorsService {
         }
     }
 
-    public static List<AuthorsEntity> getAllAuthors() {
+
+    public List<AuthorsEntity> getAllAuthors() {
         Session session = HibernateUtility.getSessionFactory().openSession();
         List<AuthorsEntity> authorsEntityList = null;
         try {
@@ -67,8 +73,6 @@ public class AuthorsService {
         }
         return authorsEntityList;
     }
-
-
 
 
 }

@@ -11,19 +11,15 @@ import javax.persistence.Table;
 public class AuthorsEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    @Column(name = "id_authors_list")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
     @Column(name = "Author_name_surname")
     private String authorNameSurname;
 
     @Column(name = "Country")
     private String country;
-
-    public AuthorsEntity(String authorNameSurname, String country) {
-        this.authorNameSurname = authorNameSurname;
-        this.country = country;
-    }
 
     public AuthorsEntity() {
     }
@@ -42,5 +38,13 @@ public class AuthorsEntity {
 
     public void setCountry(String country) {
         this.country = country;
+    }
+
+    @Override
+    public String toString() {
+        return "Author: " +
+                " Id: " + id +
+                " Name Surname: " + authorNameSurname + '\'' +
+                " Country: " + country;
     }
 }
