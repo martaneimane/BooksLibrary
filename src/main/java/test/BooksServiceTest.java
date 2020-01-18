@@ -33,13 +33,17 @@ public class BooksServiceTest {
     @Test
     public void editBook() {
         BooksEntity booksEntity = new BooksEntity();
-        booksEntity.setAuthor("Test Author");
+        String setAuthor = "Test Author";
+        String editAuthor = "Test Author Edit";
+        booksEntity.setAuthor(setAuthor);
         booksEntity.setTitle("Test Title");
         booksEntity.setYear("1995");
         booksEntity.setCategory("Test Category");
         booksService.createBook(booksEntity);
-        booksEntity.setTitle("Test Title 2");
+        booksEntity.setAuthor(editAuthor);
         booksService.editBook(booksEntity);
+
+        assertNotEquals(editAuthor, setAuthor);
 
     }
 
@@ -50,7 +54,6 @@ public class BooksServiceTest {
         booksEntity.setTitle("Test Title");
         booksEntity.setYear("2010");
         booksEntity.setCategory("Test Category");
-
         booksService.createBook(booksEntity);
         booksService.deleteBook(booksEntity);
 

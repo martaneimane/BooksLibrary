@@ -1,7 +1,5 @@
 package javafx;
 
-import hibernate.entities.BooksEntity;
-import hibernate.services.BooksService;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

@@ -11,6 +11,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
+
 import java.io.IOException;
 
 
@@ -70,7 +71,7 @@ public class Controller {
 
 
     @FXML
-    private void initialize() throws IOException {
+    private void initialize() {
         BooksService booksService = new BooksService();
         AuthorsService authorsService = new AuthorsService();
 
@@ -131,18 +132,6 @@ public class Controller {
         });
 
 
-    }
-
-
-    @FXML
-    private void onBooksButtonClick() {
-
-        BooksService booksService = new BooksService();
-
-        ObservableList<BooksEntity> booksEntityObservableList = FXCollections.observableList(booksService.getAllBooks());
-        bookTable.setItems(booksEntityObservableList);
-
-        System.out.println("test");
     }
 
 }
