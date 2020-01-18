@@ -24,6 +24,8 @@ There is three tests for this system - for checking that new book is added, for 
 # Built With
 IntelliJ IDEA
 Maven
+Hibernate
+JavaFX
 MySQL
 
 # Known Issues
