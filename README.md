@@ -26,6 +26,9 @@ IntelliJ IDEA
 Maven
 MySQL
 
+# Known Issues
+Update and Delete buttons are not working
+
 
 # Authors
 Marta Neimane 
