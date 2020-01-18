@@ -26,9 +26,6 @@ public class BooksService {
             transaction.commit();
         } catch (Exception e) {
             e.printStackTrace();
-            transaction.rollback();
-        } finally {
-            HibernateUtility.closeConnection();
         }
     }
 
@@ -42,8 +39,6 @@ public class BooksService {
         } catch (Exception e) {
             e.printStackTrace();
             transaction.rollback();
-        } finally {
-            HibernateUtility.closeConnection();
         }
     }
 

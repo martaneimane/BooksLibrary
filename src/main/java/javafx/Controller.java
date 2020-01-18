@@ -10,12 +10,15 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.control.TableColumn.CellEditEvent;
+import javafx.scene.layout.AnchorPane;
+import java.io.IOException;
 
 
 public class Controller {
-
-
+    @FXML
+    private TabPane tabPane;
+    @FXML
+    private AnchorPane anchorPaneBooks;
     @FXML
     private TableView<BooksEntity> bookTable;
     @FXML
@@ -47,70 +50,87 @@ public class Controller {
     @FXML
     private TableColumn<BooksEntity, String> country;
     @FXML
+    private TextField addTitle;
+    @FXML
     private Button authorButtonAdd;
     @FXML
     private Button authorButtonUpdate;
     @FXML
     private Button authorButtonDelete;
-
+    @FXML
+    private TextField addYear;
+    @FXML
+    private TextField addCategory;
+    @FXML
+    private TextField addAuthor;
+    @FXML
+    private TextField addName;
+    @FXML
+    private TextField addCountry;
 
 
     @FXML
-    private void initialize() {
+    private void initialize() throws IOException {
         BooksService booksService = new BooksService();
-        bookTable.setEditable(true);
+        AuthorsService authorsService = new AuthorsService();
+
         ObservableList<BooksEntity> booksEntityObservableList = FXCollections.observableList(booksService.getAllBooks());
         idBooks.setCellValueFactory(new PropertyValueFactory<>("id"));
         title.setCellValueFactory(new PropertyValueFactory<>("title"));
-
-//        title.setOnEditCommit(
-//                (CellEditEvent<BooksEntity, String> t) -> {
-//                    t.getTableView().getItems().get(
-//                            t.getTablePosition().getRow()).setTitle(t.getNewValue());
-//                });
-
         author.setCellValueFactory(new PropertyValueFactory<>("author"));
         year.setCellValueFactory(new PropertyValueFactory<>("year"));
         category.setCellValueFactory(new PropertyValueFactory<>("category"));
         bookTable.setItems(booksEntityObservableList);
 
-        final TextField addTitle = new TextField();
         addTitle.setPromptText("Book Title");
         addTitle.setMaxWidth(title.getPrefWidth());
 
-        final TextField addAuthor = new TextField();
         addAuthor.setMaxWidth(author.getPrefWidth());
         addAuthor.setPromptText("Author Name");
 
-        final TextField addYear = new TextField();
         addYear.setMaxWidth(year.getPrefWidth());
         addYear.setPromptText("Year");
 
+        addCategory.setMaxWidth(category.getPrefWidth());
+        addCategory.setPromptText("Category");
 
+        BooksEntity booksEntity = new BooksEntity();
         bookButtonAdd.setOnAction((ActionEvent e) -> {
-            try {
-                booksEntityObservableList.add(BooksEntity.class.newInstance());
-                addTitle.getText();
-                addAuthor.getText();
-                addYear.getText();
-                addTitle.clear();
-                addAuthor.clear();
-                addYear.clear();
-            } catch (InstantiationException | IllegalAccessException ex) {
-                ex.printStackTrace();
-            }
+            booksEntityObservableList.add(booksEntity);
+            booksEntity.setTitle(addTitle.getText());
+            booksEntity.setAuthor(addAuthor.getText());
+            booksEntity.setYear(addYear.getText());
+            booksEntity.setCategory(addCategory.getText());
+            booksService.createBook(booksEntity);
+            addTitle.clear();
+            addAuthor.clear();
+            addYear.clear();
+            addCategory.clear();
         });
 
-        AuthorsService authorsService = new AuthorsService();
         ObservableList<AuthorsEntity> authorsEntityObservableList = FXCollections.observableList(authorsService.getAllAuthors());
         idAuthors.setCellValueFactory(new PropertyValueFactory<>("id"));
         name.setCellValueFactory(new PropertyValueFactory<>("authorNameSurname"));
         country.setCellValueFactory(new PropertyValueFactory<>("country"));
-
         authorsTable.setItems(authorsEntityObservableList);
 
+        addName.setPromptText("Author Name");
+        addName.setMaxWidth(title.getPrefWidth());
 
-        System.out.println("test");
+        addCountry.setMaxWidth(author.getPrefWidth());
+        addCountry.setPromptText("Country");
+
+        AuthorsEntity authorsEntity = new AuthorsEntity();
+        authorButtonAdd.setOnAction(event -> {
+            authorsEntityObservableList.add(authorsEntity);
+            authorsEntity.setAuthorNameSurname(addName.getText());
+            authorsEntity.setCountry(addCountry.getText());
+            authorsService.createAuthor(authorsEntity);
+            addName.clear();
+            addCountry.clear();
+        });
+
+
     }
 
 

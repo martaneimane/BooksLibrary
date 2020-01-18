@@ -6,13 +6,14 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.TextField?>
 
 <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
          prefWidth="616.0" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml/1"
-         xmlns="http://javafx.com/javafx/8.0.221" fx:controller="javafx.Controller">
+         xmlns="http://javafx.com/javafx/8.0.221" fx:controller="javafx.Controller" fx:id="tabPane">
     <Tab text="Books" fx:id="booksTab">
         <content>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" fx:id="anchorPaneBooks">
                 <children>
                     <TableView layoutY="6.0" prefHeight="270.0" prefWidth="616.0" fx:id="bookTable">
                         <columns>
@@ -28,6 +29,10 @@
                             fx:id="bookButtonUpdate"/>
                     <Button layoutX="125.0" layoutY="330.0" mnemonicParsing="false" text="Delete"
                             fx:id="bookButtonDelete"/>
+                    <TextField layoutX="8.0" layoutY="292.0" prefHeight="26.0" prefWidth="80.0" fx:id="addTitle" />
+                    <TextField layoutX="101.0" layoutY="292.0" prefHeight="26.0" prefWidth="89.0" fx:id="addAuthor"/>
+                    <TextField layoutX="199.0" layoutY="292.0" prefHeight="26.0" prefWidth="89.0" fx:id="addYear"/>
+                    <TextField layoutX="300.0" layoutY="292.0" prefHeight="26.0" prefWidth="89.0" fx:id="addCategory" />
                 </children>
             </AnchorPane>
         </content>
@@ -48,6 +53,8 @@
                             fx:id="authorButtonUpdate"/>
                     <Button layoutX="120.0" layoutY="330.0" mnemonicParsing="false" text="Delete"
                             fx:id="authorButtonDelete"/>
+                    <TextField layoutX="12.0" layoutY="293.0" prefHeight="26.0" prefWidth="66.0" fx:id="addName" />
+                    <TextField layoutX="81.0" layoutY="293.0" prefHeight="26.0" prefWidth="66.0" fx:id="addCountry"/>
                 </children>
             </AnchorPane>
         </content>
